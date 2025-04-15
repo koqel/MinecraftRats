@@ -1,0 +1,126 @@
+# MinecraftRats Configuration
+
+# General settings
+general:
+  # Whether the plugin is enabled
+  enabled: true
+  # Debug mode (shows more messages in console)
+  debug: false
+
+# Rat settings
+rat:
+  # Rat health (hearts × 2)
+  health: 10.0
+  # Rat movement speed (vanilla zombie is 0.23)
+  speed: 0.25
+  # Rat damage when attacking players
+  damage: 2.0
+  # Whether rats should attack players
+  attack-players: true
+  # Whether rats should attack other mobs
+  attack-mobs: false
+  # What mobs rats should be afraid of (will run away from)
+  scared-of:
+    - CAT
+    - OCELOT
+  # Whether rats steal items when close to dropped items
+  steal-items: true
+  # Maximum number of items a rat can carry
+  max-items: 3
+  # Sound rats make (valid sounds: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html)
+  sound: ENTITY_BAT_AMBIENT
+  # How often rats make sounds (in ticks, 20 ticks = 1 second)
+  sound-interval: 100
+
+# Spawning settings
+spawning:
+  # Whether natural spawning is enabled
+  natural-spawning: true
+  # Maximum number of rats that can exist in the world
+  max-rats: 50
+  # Minimum light level for rats to spawn (0-15)
+  min-light-level: 0
+  # Maximum light level for rats to spawn (0-15)
+  max-light-level: 7
+  # Chance for a rat to spawn (0.0-1.0)
+  chance: 0.05
+  # Worlds where rats can spawn
+  enabled-worlds:
+    - world
+    - world_nether
+  # Biomes where rats can spawn more frequently
+  preferred-biomes:
+    - PLAINS
+    - FOREST
+    - DARK_FOREST
+    - TAIGA
+  # Biomes where rats cannot spawn
+  disabled-biomes:
+    - DESERT
+    - BADLANDS
+    - MUSHROOM_FIELDS
+
+# Block-break spawning settings
+block-spawning:
+  # Whether block-break spawning is enabled
+  enabled: true
+  # Chance for a rat to spawn when breaking a block (0.0-1.0)
+  chance: 0.05
+  # Blocks that can spawn rats when broken
+  blocks:
+    - DIRT
+    - GRASS_BLOCK
+    - COARSE_DIRT
+    - PODZOL
+    - MYCELIUM
+    - FARMLAND
+    - SOUL_SOIL
+    - HAY_BLOCK
+
+# Drops settings
+drops:
+  # Whether rats drop items on death
+  enabled: true
+  # List of possible drops
+  items:
+    # Format: MATERIAL:AMOUNT:CHANCE (chance is between 0.0 and 1.0)
+    - LEATHER:1:0.7
+    - STRING:2:0.5
+    - ROTTEN_FLESH:1:0.3
+    - GOLD_NUGGET:1:0.1
+
+# Nest settings
+nests:
+  # Whether rats can create nests
+  enabled: true
+  # Materials rats can use to build nests
+  materials:
+    - DIRT
+    - GRASS_BLOCK
+    - HAY_BLOCK
+    - WHEAT
+  # Maximum number of nests per world
+  max-nests: 15
+  # How far rats will wander from their nest
+  wander-distance: 16
+  # How often rats try to return to their nest (in ticks)
+  return-interval: 12000
+
+# Custom rat colors (optional)
+colors:
+  # Whether custom colored rats are enabled
+  enabled: true
+  # List of possible colors with their chances
+  list:
+    BROWN: 0.6
+    GRAY: 0.3
+    WHITE: 0.05
+    BLACK: 0.05
+
+# Messages (can use color codes with &)
+messages:
+  prefix: "&7[&eMinecraftRats&7] "
+  reload: "&aConfiguration reloaded successfully!"
+  spawn: "&aSpawned %amount% rats!"
+  kill: "&cKilled %amount% rats!"
+  no-permission: "&cYou don't have permission to use this command!"

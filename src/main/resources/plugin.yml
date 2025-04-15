@@ -1,0 +1,26 @@
+name: MinecraftRats
+version: '1.0.0'
+main: services.plasma.minecraftRats.MinecraftRats
+api-version: '1.13'
+prefix: Rats
+authors: [ Plasma Services ]
+description: A plugin that adds rats to Minecraft
+website: https://plasma.services/
+commands:
+  rats:
+    description: Main command for the MinecraftRats plugin
+    usage: /<command> [spawn|kill|reload]
+    permission: minecraftrats.command
+permissions:
+  minecraftrats.command:
+    description: Allows the use of the /rats command
+    default: op
+  minecraftrats.spawn:
+    description: Allows spawning rats
+    default: op
+  minecraftrats.kill:
+    description: Allows killing all rats
+    default: op
+  minecraftrats.reload:
+    description: Allows reloading the plugin configuration
+    default: op
